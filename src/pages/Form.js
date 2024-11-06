@@ -22,7 +22,7 @@ function Form() {
     e.preventDefault();
     try {
       const response = await authorizeUser(formData, location.search); // Llamamos a authorizeUser desde api.js
-      if (response.status === 200) { // Verificamos el status code
+      if (response.status === 201) { // Verificamos el status code
         navigate("/success");
       }
     } catch {
