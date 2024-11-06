@@ -23,7 +23,10 @@ function Form() {
     try {
       const response = await authorizeUser(formData, location.search); // Llamamos a authorizeUser desde api.js
       if (response.status === 201) { // Verificamos el status code
-        navigate("/success");
+        const url = '?redirectUrl=www.google.com'
+        navigate({pathname: '/success', search: url});
+
+        
       }
     } catch {
       setShowSnackbar(true);
