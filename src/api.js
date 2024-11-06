@@ -8,9 +8,9 @@ const api = axios.create({
   },
 });
 
-export const authorizeUser = async (data) => {
+export const authorizeUser = async (data, query) => {
   try {
-    console.log("DATA", data)
+    
     const response = await api.post("/authorize", data);
     return response; // Retorna la respuesta completa para que podamos verificar el código de estado en el componente
   } catch (error) {
