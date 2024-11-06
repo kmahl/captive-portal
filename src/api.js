@@ -10,14 +10,18 @@ const api = axios.create({
 
 const getQueryParams = (search) => {
   const params = new URLSearchParams(search);
-  const entries = Array.from(params.entries());
-  return entries.map(([key, value]) => ({ key, value }));
+  const result = {};
+
+  for (const [key, value] of params.entries()) {
+    result[key] = value;
+  }
+
+  return result;
 };
 
 export const authorizeUser = async (data, params) => {
   try {
     const queryParams = getQueryParams(params);
-    console.log("queryParams", queryParams)
     const requestData = {
       name: data.name,
       phone: data.phone,
