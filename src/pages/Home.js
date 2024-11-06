@@ -20,7 +20,6 @@ function Home() {
         <Typography variant="subtitle1">Sitio: {site || "default"}</Typography>
         <Typography variant="body1" style={{ margin: "1rem 0" }}>Para acceder por favor completa el formulario</Typography>
         <Button variant="contained" fullWidth color="primary" onClick={handleEnter}>Entrar</Button>
-        <Typography variant="h5" gutterBottom>Query Params</Typography>
       </Box>
     </Card>
   );
