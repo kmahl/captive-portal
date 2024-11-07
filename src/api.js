@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://unifi-server.vercel.app/api/unifi",
+  baseURL: "https://unifi-server.vercel.app/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -33,9 +33,18 @@ export const authorizeUser = async (data, params) => {
       url: queryParams.url,
       ssid: queryParams.ssid
     }
-    const response = await api.post("/authorize", requestData);
-    return response; // Retorna la respuesta completa para que podamos verificar el código de estado en el componente
+    const response = await api.post("/unifi/authorize", requestData);
+    return response;
   } catch (error) {
-    throw error; // Propaga el error para manejarlo en el componente
+    throw error; 
+  }
+};
+
+export const fetchSiteInfo = async (site) => {
+  try {
+    const response = await api.get(`site/info?site=${site}`);
+    return response.data.data;
+  } catch (error) {
+    throw new Error("Error al obtener la información del sitio");
   }
 };
