@@ -74,7 +74,7 @@ function Home() {
           alignItems: 'center',
           flexDirection: 'column',
           width: '100%',
-          padding: '50px 25px 10px',
+          padding: '50px 25px',
           borderRadius: '20px 20px 0px 0px'
         }}
       >
