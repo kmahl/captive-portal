@@ -11,7 +11,7 @@ function App() {
     <SiteProvider>
       <Router>
         <CssBaseline />
-        <Container maxWidth="sm" style={{ padding: "1rem", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Container maxWidth="sm" style={{ padding: "0", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Routes>
             <Route
               path="/guest/s/:site"

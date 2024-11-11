@@ -42,7 +42,10 @@ export const authorizeUser = async (data, params) => {
 
 export const fetchSiteInfo = async (site) => {
   try {
+
+    console.log(site)
     const response = await api.get(`site/info?site=${site}`);
+    console.log(response)
     return response.data.data;
   } catch (error) {
     throw new Error("Error al obtener la información del sitio");
