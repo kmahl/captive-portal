@@ -15,7 +15,7 @@ function Home() {
   const navigate = useNavigate();
   const location = useLocation();
   const { siteInfo, loading, error } = useSite();
-
+  const backgroundColor = siteInfo.backgroundColor;
   const handleContinue = () => {
     navigate({ pathname: `/form/${siteInfo?.site || "default"}`, search: location.search });
   };
@@ -39,7 +39,7 @@ function Home() {
   return (
     <Box
       sx={{
-        backgroundColor: '#007bff',
+        backgroundColor: {backgroundColor},
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
