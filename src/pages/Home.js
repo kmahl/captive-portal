@@ -40,7 +40,7 @@ function Home() {
     <Box
       sx={{
         backgroundColor: { backgroundColor },
-        minHeight: '100vh',
+        minHeight: '90vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -82,7 +82,7 @@ function Home() {
           textColor={siteInfo.button?.textColor}
           sx={{ textTransform: 'capitalize' }}
         />
-        <Footer text="Powered by NetConNow" color={siteInfo.textColor} />
+        <Footer text="Powered by NetConNow®" color={siteInfo.textColor} />
       </BottomNavigation>
 
 
