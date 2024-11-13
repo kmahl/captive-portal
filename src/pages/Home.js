@@ -55,7 +55,7 @@ function Home() {
           alignItems: 'center',
           flexDirection: 'column',
           mt: '50px',
-          flexGrow: '0.5',
+          flexGrow: '0.7',
           justifyContent: 'center'
         }}
       >
