@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Container, CircularProgress, Typography, BottomNavigation  } from "@mui/material";
+import { Box, Container, CircularProgress, Typography, BottomNavigation } from "@mui/material";
 import { fetchSiteInfo } from "../api";
 import { useLocation } from "react-router-dom";
 import { useSite } from "../context/SiteContext"
@@ -15,7 +15,7 @@ function Home() {
   const navigate = useNavigate();
   const location = useLocation();
   const { siteInfo, loading, error } = useSite();
-  const backgroundColor = siteInfo.backgroundColor;
+  const backgroundColor = siteInfo?.backgroundColor;
   const handleContinue = () => {
     navigate({ pathname: `/form/${siteInfo?.site || "default"}`, search: location.search });
   };
@@ -39,7 +39,7 @@ function Home() {
   return (
     <Box
       sx={{
-        backgroundColor: {backgroundColor},
+        backgroundColor: { backgroundColor },
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -75,14 +75,15 @@ function Home() {
           padding: '0px 25px 50px',
         }}
       >
-      <Button
-        text="Continuar"
-        onClick={handleContinue}
-        color={siteInfo.button?.backgroundColor}
-        textColor={siteInfo.button?.textColor}
-      />
-      <Footer text="Powered by NetConNow" color={siteInfo.textColor} />
-    </BottomNavigation>
+        <Button
+          text="Continuar"
+          onClick={handleContinue}
+          color={siteInfo.button?.backgroundColor}
+          textColor={siteInfo.button?.textColor}
+          sx={{ textTransform: 'capitalize' }}
+        />
+        <Footer text="Powered by NetConNow" color={siteInfo.textColor} />
+      </BottomNavigation>
 
 
     </Box >
