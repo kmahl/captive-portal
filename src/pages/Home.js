@@ -54,7 +54,9 @@ function Home() {
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
-          mt: '50px'
+          mt: '50px',
+          flexGrow: '0.5',
+          justifyContent: 'center'
         }}
       >
         <Title title={siteInfo.title} subtitle={siteInfo.subtitle} color={siteInfo.textColor} />
