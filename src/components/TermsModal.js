@@ -2,7 +2,7 @@ import React from "react";
 import { Dialog, DialogTitle, DialogContent, IconButton, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
-function TermsModal({ open, onClose }) {
+function TermsModal({ open, onClose, tyc }) {
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>
@@ -13,7 +13,7 @@ function TermsModal({ open, onClose }) {
       </DialogTitle>
       <DialogContent dividers>
         <Typography variant="body2" paragraph>
-          Aquí va una descripción larga para los términos y condiciones. Puede hacer scroll si es necesario.
+          {tyc}
         </Typography>
       </DialogContent>
     </Dialog>
