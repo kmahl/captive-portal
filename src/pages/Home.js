@@ -40,7 +40,7 @@ function Home() {
     <Box
       sx={{
         backgroundColor: { backgroundColor },
-        minHeight: '90vh',
+        minHeight: '100%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
