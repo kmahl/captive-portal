@@ -12,7 +12,7 @@ const Logo = ({ imageUrl, size = 160 }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
       }}
     >
       <img src={imageUrl} alt="logo" style={{ width: '100%', height: '100%' }} />

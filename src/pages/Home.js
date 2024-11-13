@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Container, CircularProgress, Typography } from "@mui/material";
+import { Box, Container, CircularProgress, Typography, BottomNavigation  } from "@mui/material";
 import { fetchSiteInfo } from "../api";
 import { useLocation } from "react-router-dom";
 import { useSite } from "../context/SiteContext"
@@ -38,7 +38,6 @@ function Home() {
 
   return (
     <Box
-      id={'adsasd'}
       sx={{
         backgroundColor: '#007bff',
         minHeight: '100vh',
@@ -48,7 +47,6 @@ function Home() {
         alignItems: 'center',
         width: '100%',
         padding: '0px',
-        id: 'asd'
       }}
     >
       <Box
@@ -59,33 +57,32 @@ function Home() {
           mt: '50px'
         }}
       >
-        <Title title="Bienvenido a" subtitle={siteInfo.name} color="white" />
+        <Title title={siteInfo.title} subtitle={siteInfo.subtitle} color={siteInfo.textColor} />
 
-        <Avatar
-          imageUrl={siteInfo.avatarUrl}
-          size={160}
-          borderColor="white"
+        <Logo
+          imageUrl={siteInfo.logoUrl}
+          size={200}
         />
       </Box>
-      <Box
+      <BottomNavigation
         sx={{
-          backgroundColor: '#ffffff',
+          height: 'auto',
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
           width: '100%',
-          padding: '50px 25px',
-          borderRadius: '20px 20px 0px 0px'
+          backgroundColor: 'transparent',
+          padding: '0px 25px 50px',
         }}
       >
-      <Logo text="NetConNow" imageUrl={siteInfo.logoUrl}  />
-
       <Button
         text="Continuar"
         onClick={handleContinue}
+        color={siteInfo.button?.backgroundColor}
+        textColor={siteInfo.button?.textColor}
       />
-      <Footer text="Powered by NetConNow" color="lightgray" />
-    </Box>
+      <Footer text="Powered by NetConNow" color={siteInfo.textColor} />
+    </BottomNavigation>
 
 
     </Box >

@@ -4,7 +4,7 @@ import { Typography, Box } from '@mui/material';
 
 const Footer = ({ text = 'Powered by NetConNow', color = 'gray' }) => {
   return (
-    <Box sx={{ textAlign: 'center', marginTop: '1.5rem', color, backgroundColor:'#ffffff' }}>
+    <Box sx={{ textAlign: 'center', marginTop: '1.5rem', color }}>
       <Typography variant="caption">{text}</Typography>
     </Box>
   );
