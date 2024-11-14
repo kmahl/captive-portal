@@ -39,10 +39,10 @@ function Form() {
     setIsLoading(true);
 
     try {
-      const response = await authorizeUser(formData);
-      if (response.status === 200) {
+     // const response = await authorizeUser(formData);
+    //  if (response.status === 200) {
         navigate("/success");
-      }
+   //   }
     } catch {
       setShowSnackbar(true);
     } finally {
