@@ -3,11 +3,21 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Typography, Card } from "@mui/material";
 import WifiIcon from "@mui/icons-material/Wifi";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Lottie from 'react-lottie';
+import animationData from '../lotties/success';
+
 
 function Success() {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
   // Extrae la URL de redirección del query parameter
   const getRedirectUrl = () => {
     const params = new URLSearchParams(location.search);
@@ -16,13 +26,13 @@ function Success() {
 
   useEffect(() => {
     const redirectUrl = getRedirectUrl();
-    
+
     // Configura un temporizador de 2 segundos para redirigir
     const timer = setTimeout(() => {
       if (redirectUrl) {
-        window.location.href = redirectUrl; // Redirecciona a la URL externa
+        // window.location.href = redirectUrl; // Redirecciona a la URL externa
       } else {
-        navigate("/"); // Redirecciona a la página principal si no hay URL
+        //   navigate("/"); // Redirecciona a la página principal si no hay URL
       }
     }, 2000);
 
@@ -31,12 +41,28 @@ function Success() {
   }, [location, navigate]);
 
   return (
-    <Card style={{ padding: "2rem", textAlign: "center" }}>
-      <WifiIcon fontSize="large" color="primary" />
-      <CheckCircleIcon fontSize="large" color="success" />
-      <Typography variant="h5">¡Conexión exitosa!</Typography>
-      <Typography variant="body1">Disfruta de tu conexión a internet.</Typography>
-    </Card>
+    <Box
+      sx={{
+        backgroundColor: '#21c779', // { backgroundColor },
+        minHeight: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        width: '100%',
+        padding: '0px 50px',
+        textAlign: 'center'
+      }}
+    >
+
+      <Typography sx={{fontWeight:600, fontSize:'40px'}} variant="h3" color="#fff" >¡Conexión exitosa!</Typography>
+      <Lottie
+        options={defaultOptions}
+        height={250}
+        width={250}
+      />
+      <Typography sx={{fontSize:'20px'}} variant="body1" color="#fff">Disfruta de tu<br />conexión a internet.</Typography>
+    </Box>
   );
 }
 

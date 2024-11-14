@@ -5,10 +5,10 @@ import { Box, Typography } from '@mui/material';
 const Title = ({ title = 'Bienvenido', subtitle = 'lorem ipsum dolor', color = 'white' }) => {
   return (
     <Box mb={4}>
-      <Typography variant="h6" align="center" color={color}>
+      <Typography variant="h5" align="center" color={color}>
         {title}
       </Typography>
-      <Typography variant="h6" align="center" color={color}>
+      <Typography variant="h5" align="center" color={color}>
         {subtitle}
       </Typography>
     </Box>

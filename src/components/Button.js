@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button as MuiButton } from '@mui/material';
 
-const Button = ({ text = 'Continuar', onClick, color = 'black', textColor = 'white',  type="button", variant='contained', disabled=false, startIcon=null }) => {
+const Button = ({ text = 'Continuar', onClick, color = 'black', textColor = 'white',  type="button", variant='contained', disabled=false, startIcon=null, sx }) => {
   return (
     <MuiButton
       variant="contained"
@@ -12,6 +12,7 @@ const Button = ({ text = 'Continuar', onClick, color = 'black', textColor = 'whi
       disabled={disabled}
       type={type}
       sx={{
+        ...sx,
         bgcolor: color,
         color: textColor,
         fontWeight: 'bold',

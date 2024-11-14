@@ -10,6 +10,9 @@ import Avatar from '../components/Avatar';
 import Logo from '../components/Logo';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
+import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
+import SvgIcon from '@mui/material/SvgIcon';
+import Icon from '@mui/material/Icon';
 
 function Home() {
   const navigate = useNavigate();
@@ -55,17 +58,36 @@ function Home() {
           alignItems: 'center',
           flexDirection: 'column',
           mt: '50px',
-          flexGrow: '0.7',
-          justifyContent: 'center'
+          flexGrow: '0.6',
+          justifyContent: 'space-evenly'
         }}
       >
         <Title title={siteInfo.title} subtitle={siteInfo.subtitle} color={siteInfo.textColor} />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            mt: '50px',
+            flexGrow: '0.6',
+            justifyContent: 'center'
+          }}
+        >
+          <Logo
+            imageUrl={siteInfo.logoUrl}
+            size={200}
+          />
+          <Box sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            marginTop: '20px',
+          }}>
+            <VerifiedUserOutlinedIcon style={{ fill: siteInfo.textColor }} /><Typography marginLeft={'5px'} color={siteInfo.textColor}>Conexion segura</Typography>
+          </Box>
+        </Box>
 
-        <Logo
-          imageUrl={siteInfo.logoUrl}
-          size={200}
-        />
       </Box>
+
       <BottomNavigation
         sx={{
           height: 'auto',
@@ -78,11 +100,11 @@ function Home() {
         }}
       >
         <Button
-          text="Continuar"
+          text="Ingresar"
           onClick={handleContinue}
           color={siteInfo.button?.backgroundColor}
           textColor={siteInfo.button?.textColor}
-          sx={{ textTransform: 'capitalize' }}
+          sx={{ textTransform: 'capitalize', fontWeight: 400 }}
         />
         <Footer text="Powered by NetConNow®" color={siteInfo.textColor} />
       </BottomNavigation>

@@ -166,10 +166,9 @@ function Form() {
           }}
         >
           <Box display="flex" alignItems="center">
-            <Checkbox name="tyc" onChange={handleInputChange}
-              sx={{ marginBottom: '0' }} required />
+            <Checkbox sx={{ padding: '0 5px', marginBottom: '0' }} name="tyc" onChange={handleInputChange} required />
             <Typography variant="body2">
-              Acepto los <ButtonMui onClick={() => setShowModal(true)}>Términos y Condiciones</ButtonMui>
+              Acepto los <ButtonMui sx={{ padding: 0, textTransform: 'lowercase' }} onClick={() => setShowModal(true)}>Términos y Condiciones</ButtonMui>
             </Typography>
           </Box>
           <Button
